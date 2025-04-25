@@ -1,0 +1,12 @@
+# openbb[all]
+# vectorbt
+# zipline-reloaded
+# alpaca-py
+ta-lib
+ib_async
+aiohttp
+asyncio
+pandas
+jupyter
+roboquant[all]
+# nautilus_trader[docker,ib]

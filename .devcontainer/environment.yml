@@ -1,0 +1,21 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - psycopg2
+  - pylint
+  - pytables
+  - pyfolio-reloaded
+  - alphalens-reloaded
+  - libta-lib
+  # lock numpy version to speedup image build process https://peps.python.org/pep-0440/#compatible-release
+  - numpy~=1.26.4
+  - pip:
+      - nasdaq-data-link
+      - logbook
+      # - ta-lib
+      # - openbb[all]
+      # - zipline-reloaded
+      # - vectorbt
+      # - alpaca-py

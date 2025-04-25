@@ -1,0 +1,5 @@
+{
+    "sqltools.useNodeRuntime": false,
+    "editor.scrollbar.verticalScrollbarSize": 20,
+    "editor.scrollbar.vertical": "visible",
+}

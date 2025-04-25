@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/anaconda-postgres
+// devcontainer.json, docker-compose.yml, Dockerfile, scripts, and postCreateCommand.sh are all in the same directory.
+{
+	"name": "Anaconda & uv",
+	// "dockerComposeFile": "../docker-compose.yml",
+	// "service": "appdev",
+	// "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceFolder": "/app/",
+	"features": {
+		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg",
+				"bierner.docs-view",
+				"ms-toolsai.jupyter",
+				"saoudrizwan.claude-dev",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"editor.scrollbar.verticalScrollbarSize": 20,
+				"sqltools.connections": [
+					{
+						"name": "Container database",
+						"driver": "PostgreSQL",
+						"previewLimit": 50,
+						"server": "localhost",
+						"port": 5432,
+						"database": "fastapi",
+						"username": "user",
+						"password": "password123"
+					}
+				]
+			}
+		}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5432],
+	"postAttachCommand": "sudo chown -R vscode /app",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": ".devcontainer/postCreateCommand.sh"
+
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
