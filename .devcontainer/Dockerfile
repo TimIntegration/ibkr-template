@@ -42,12 +42,6 @@ RUN /home/$SETUSER/.fzf/install --all
 SHELL ["/usr/bin/zsh", "-c"]
 RUN source /opt/conda/etc/profile.d/conda.sh && conda init zsh
 
-# Change the working directory to the `app` directory
-WORKDIR /app
-
-# Copy the project into the intermediate image
-ADD . /app
-
 # Make RUN commands use the new environment:
 # SHELL ["conda", "run", "-n", "myenv", "/usr/bin/zsh", "-c"]
 
